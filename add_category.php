@@ -1,5 +1,5 @@
 <?php
-// Get the product data
+// Get the category data
 $name = filter_input(INPUT_POST, 'name');
 
 // Validate inputs
@@ -9,7 +9,7 @@ if ($name == null) {
 } else {
     require_once('database.php');
 
-    // Add the product to the database  
+    // Add the category to the database  
     $query = 'INSERT INTO categories
                  (categoryName)
               VALUES
@@ -19,7 +19,7 @@ if ($name == null) {
     $statement->execute();
     $statement->closeCursor();
 
-    // Display the Product List page
+    // Display the Category List page
     include('category_list.php');
 }
 ?>

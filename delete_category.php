@@ -2,13 +2,13 @@
 require_once('database.php');
 
 $name = filter_input(INPUT_POST, 'name');
-
+$category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 // Delete category from the database
-if ($name !== null) {
+if ($category_id !== false) {
     $query = 'DELETE FROM categories
-              WHERE categoryName = :name';
+              WHERE categoryID = :category_id';
     $statement = $db->prepare($query);
-    $statement->bindValue(':product_id', $product_id);
+    $statement->bindValue(':category_id', $category_id);
     $success = $statement->execute();
     $statement->closeCursor();    
 }
