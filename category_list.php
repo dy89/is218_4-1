@@ -31,7 +31,6 @@ $statement->closeCursor();
          <?php foreach ($categories as $categories) : ?>
             <tr>
                 <td><?php echo $category['categoryName']; ?></td>
-                <td class="right"><?php echo $category['category_id']; ?></td>
                 <td><form action="delete_category.php" method="post">
                     <input type="hidden" name="category_id"
                            value="<?php echo $product['categoryID']; ?>">
@@ -46,10 +45,14 @@ $statement->closeCursor();
     <h2>Add Category</h2>
     
     <!-- add code for the form here -->
-    
-    <br>
+    <form action="add_category.php" method="post">
+    <label>Name:</label>
+    <input type="text" name="name">
+    <input type="submit" value="Add"><br>
+    </form>
+   <br>
     <p><a href="index.php">List Products</a></p>
-
+    
     </main>
 
     <footer>
