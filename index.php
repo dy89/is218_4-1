@@ -51,6 +51,7 @@ $statement3->closeCursor();
 <body>
 <header><h1>Product Manager</h1></header>
 <main>
+	<h1>Hello World </h1>
     <h1>Product List</h1>
 
     <aside>
